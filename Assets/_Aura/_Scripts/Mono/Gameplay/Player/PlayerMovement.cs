@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
 
 
     #region private fields
-    private PlayerReferences playerRefs;
+    private Player playerRefs;
     private PlayerAnimations playerAnimations;
     private Rigidbody2D playerRb;
     private Vector2 moveDirection;
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
     }
     private void Initialize()
     {
-        playerRefs = GetComponent<PlayerReferences>();
+        playerRefs = GetComponent<Player>();
         playerAnimations = GetComponent<PlayerAnimations>();
         playerRb = GetComponent<Rigidbody2D>();
         actions = new InputActions();

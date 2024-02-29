@@ -17,11 +17,23 @@ public class PlayerStatsSO : ScriptableObject
     [Header("Mana")]
     public float MaxMana;
     public float Mana;
+
+    [Space(10)]
+    [Header("Exp")]
+    public float CurrentExp;
+    public float NextLevelExp;
+    public float InitialNextLevelExp;//exp needed to reach level 2
+
+    [Tooltip("Percentage over and above current exp needed to go to NextLevelExp")]
+    [Range(1f, 100f)] public float ExpMultiplier;
     
 
     public void ResetPlayer()
     {
         Health = MaxHealth;
         Mana = MaxMana;
+        CurrentExp = 0;
+        NextLevelExp = InitialNextLevelExp;
+        Level = 1;
     }
 }
