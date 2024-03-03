@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5026189609326678937}
   - component: {fileID: 2785560780579099203}
   - component: {fileID: 4272350148791538424}
+  - component: {fileID: 3579397579642943000}
   m_Layer: 0
   m_Name: Enemy-Cyclope
   m_TagString: Untagged
@@ -142,3 +143,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3579397579642943000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307313037307376146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []

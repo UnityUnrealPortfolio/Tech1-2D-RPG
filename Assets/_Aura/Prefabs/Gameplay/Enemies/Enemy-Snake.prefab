@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4006937255545846165}
   - component: {fileID: 7175430614842740668}
   - component: {fileID: 7447726924526150466}
+  - component: {fileID: 6764508795850559625}
   m_Layer: 0
   m_Name: Enemy-Snake
   m_TagString: Untagged
@@ -142,3 +143,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6764508795850559625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299392878029580189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []

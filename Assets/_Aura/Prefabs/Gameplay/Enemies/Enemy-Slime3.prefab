@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8432105316160697921}
   - component: {fileID: 7219106307834461032}
   - component: {fileID: 1247167273493723793}
+  - component: {fileID: 2244414270665752236}
   m_Layer: 0
   m_Name: Enemy-Slime3
   m_TagString: Untagged
@@ -142,3 +143,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2244414270665752236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534207740429542481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []

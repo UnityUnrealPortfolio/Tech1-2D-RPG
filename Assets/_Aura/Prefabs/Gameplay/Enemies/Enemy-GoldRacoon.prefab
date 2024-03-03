@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3474813448713397757}
   - component: {fileID: 2439284204239335825}
   - component: {fileID: 3137458472170427738}
+  - component: {fileID: -308823596147263567}
   m_Layer: 0
   m_Name: Enemy-GoldRacoon
   m_TagString: Untagged
@@ -142,3 +143,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-308823596147263567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420701892686012023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
