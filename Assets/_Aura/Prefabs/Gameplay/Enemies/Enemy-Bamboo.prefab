@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 56099799263776987}
   - component: {fileID: 896690371263389695}
   - component: {fileID: 8549218147916262107}
+  - component: {fileID: 6086918845217127665}
   - component: {fileID: -6081712258923370292}
-  m_Layer: 0
+  - component: {fileID: 7616359320855742464}
+  - component: {fileID: 7282841553868048937}
+  m_Layer: 8
   m_Name: Enemy-Bamboo
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -143,6 +146,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6086918845217127665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685439765202147451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ffe237322b1014681807eb9310f843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: -6.5822, y: 2.2221606, z: 0.00021362305}
+  - {x: -3.0611339, y: 2.380327, z: 0.00021362305}
+  - {x: 1.1207056, y: -0.92185843, z: 0.00021362305}
+  - {x: -2.9155812, y: -0.9403385, z: 0.00021362305}
+  - {x: -7.1677732, y: -1.0792853, z: 0.00021362305}
 --- !u!114 &-6081712258923370292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,5 +176,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: 
-  states: []
+  initState: Patrol
+  states:
+  - Id: Patrol
+    Actions:
+    - {fileID: 7616359320855742464}
+    Transitions:
+    - Decision: {fileID: 7282841553868048937}
+      TrueState: Chase
+      FalseState: 
+  - Id: Chase
+    Actions: []
+    Transitions: []
+--- !u!114 &7616359320855742464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685439765202147451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f47643878a1d94482fd953e77bfce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2.5
+  minDistToTarget: 0.1
+--- !u!114 &7282841553868048937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685439765202147451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2026b33ead0d41841b677dd44d7b7a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 3
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128

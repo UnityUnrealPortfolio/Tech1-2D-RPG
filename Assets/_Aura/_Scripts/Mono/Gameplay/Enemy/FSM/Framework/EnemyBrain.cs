@@ -12,6 +12,8 @@ public class EnemyBrain:MonoBehaviour
     [SerializeField] private FSMState[] states;
     public FSMState CurrentState { get; set; } = new FSMState();
 
+    //reference to the ninja player once detected
+    public Transform Player { get; set; }
     private void Start()
     {
         ChangeState(initState);

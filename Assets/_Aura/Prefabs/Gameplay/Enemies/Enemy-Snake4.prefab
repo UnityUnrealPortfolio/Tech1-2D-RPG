@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1545312735010814909}
   - component: {fileID: 4526596414879760115}
   - component: {fileID: -7220558460700336464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy-Snake4
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

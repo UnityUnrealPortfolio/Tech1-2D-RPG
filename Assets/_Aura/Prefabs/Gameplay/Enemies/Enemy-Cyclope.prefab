@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2785560780579099203}
   - component: {fileID: 4272350148791538424}
   - component: {fileID: 3579397579642943000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy-Cyclope
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

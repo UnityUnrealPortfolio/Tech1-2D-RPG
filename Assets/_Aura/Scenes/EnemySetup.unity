@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178fc1969f05319439ae7ef2150e3096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: {x: 1, y: 1}
+  moveRange: {x: 3, y: 3}
   moveSpeed: 1
   wanderTime: 2
 --- !u!1001 &208751089
@@ -152,36 +152,56 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
-      propertyPath: initState
-      value: Wander
-      objectReference: {fileID: 0}
-    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: states.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[2].Id
+      value: Chase
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[1].Actions.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
-      propertyPath: states.Array.data[0].Id
-      value: Wander
-      objectReference: {fileID: 0}
-    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
-      propertyPath: states.Array.data[0].Actions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
-      propertyPath: states.Array.data[0].Actions.Array.data[0]
+      propertyPath: states.Array.data[1].Actions.Array.data[0]
       value: 
-      objectReference: {fileID: 208751091}
+      objectReference: {fileID: 208751100}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[0].Decision
+      value: 
+      objectReference: {fileID: 208751099}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[0].Decision
+      value: 
+      objectReference: {fileID: 208751099}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[0].FalseState
+      value: Patrol
+      objectReference: {fileID: 0}
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[0].FalseState
+      value: Patrol
+      objectReference: {fileID: 0}
     - target: {fileID: 685439765202147451, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_Name
       value: Enemy-Bamboo
       objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3
+      value: 5.76
       objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8054323
+      value: -0.34
       objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -221,14 +241,25 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 685439765202147451, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 208751091}
+      addedObject: {fileID: 208751100}
   m_SourcePrefab: {fileID: 100100000, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
 --- !u!1 &208751090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 685439765202147451, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
   m_PrefabInstance: {fileID: 208751089}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &208751091
+--- !u!114 &208751099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7282841553868048937, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+  m_PrefabInstance: {fileID: 208751089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208751090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2026b33ead0d41841b677dd44d7b7a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &208751100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,12 +268,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 208751090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178fc1969f05319439ae7ef2150e3096, type: 3}
+  m_Script: {fileID: 11500000, guid: aa9200ba07015554cb0db81836a2f7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: {x: 2, y: 2}
-  moveSpeed: 2
-  wanderTime: 1.5
+  chaseSpeed: 4
+  minDistance: 0.303
 --- !u!1 &330758535
 GameObject:
   m_ObjectHideFlags: 0
@@ -13124,6 +13154,10 @@ PrefabInstance:
     - target: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
       propertyPath: m_Name
       value: Enemy-Snake4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6368482118875460135, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
       propertyPath: m_LocalPosition.x

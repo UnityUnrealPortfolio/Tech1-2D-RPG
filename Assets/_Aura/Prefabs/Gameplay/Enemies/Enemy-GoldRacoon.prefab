@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2439284204239335825}
   - component: {fileID: 3137458472170427738}
   - component: {fileID: -308823596147263567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy-GoldRacoon
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

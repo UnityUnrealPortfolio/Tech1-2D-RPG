@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 341539907218730115}
   - component: {fileID: 5657766648849479536}
   - component: {fileID: 907422648886172717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy-Slime
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}

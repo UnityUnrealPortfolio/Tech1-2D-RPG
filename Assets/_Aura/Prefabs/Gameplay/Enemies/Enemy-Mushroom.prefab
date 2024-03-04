@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1670143240650256606}
   - component: {fileID: 5513621952097034951}
   - component: {fileID: 7391666503434886991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy-Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
