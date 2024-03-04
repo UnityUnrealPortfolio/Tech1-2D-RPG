@@ -12,6 +12,24 @@ public class PlayerStatsSO : ScriptableObject
     [Header("Health")]
     public float MaxHealth;
     public float Health; //ToDo:may refactor this to properties and broadcast death event to listeners
+    public float HealthProp
+    {
+        get
+        {
+            return Health;
+        }
+        set
+        {
+            Health = value;
+            OnDamageTaken?.Invoke();
+            if(Health <= 0)
+            {
+                //trigger health zero event
+                OnHealthZero?.Invoke();
+                Health = 0;
+            }
+        }
+    }
 
     [Space(10)]
     [Header("Mana")]
@@ -26,8 +44,9 @@ public class PlayerStatsSO : ScriptableObject
 
     [Tooltip("Percentage over and above current exp needed to go to NextLevelExp")]
     [Range(1f, 100f)] public float ExpMultiplier;
-    
 
+    public event Action OnHealthZero;
+    public event Action OnDamageTaken;
     public void ResetPlayer()
     {
         Health = MaxHealth;
