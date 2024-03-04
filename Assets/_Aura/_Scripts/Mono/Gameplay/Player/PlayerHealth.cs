@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
       playerStats.Health -= _amount;
         if (playerStats.Health <= 0 )
         {
+            playerStats.Health = 0;
             HandlePlayerDeath();
         }
     }

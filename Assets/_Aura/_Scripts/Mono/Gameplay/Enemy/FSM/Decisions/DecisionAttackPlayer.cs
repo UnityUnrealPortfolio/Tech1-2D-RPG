@@ -20,8 +20,9 @@ public class DecisionAttackPlayer : FSMDecision
 
     private bool InAttackRange()
     {
-        Collider2D playerCollider = Physics2D.OverlapCircle(enemyBrain.transform.position,
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position,
             attackRange, playerLayerMask);
+
         if (playerCollider != null)
         {
             enemyBrain.Player = playerCollider.transform;
@@ -29,9 +30,10 @@ public class DecisionAttackPlayer : FSMDecision
         }
         else
         {
-            enemyBrain.Player = null;
+            print("Problem code");
             return false;
         }
+            //enemyBrain.Player = null;
     }
 
     private void OnDrawGizmos()

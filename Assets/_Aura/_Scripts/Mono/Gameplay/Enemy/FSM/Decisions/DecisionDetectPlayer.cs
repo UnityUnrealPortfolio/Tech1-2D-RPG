@@ -20,10 +20,12 @@ public class DecisionDetectPlayer : FSMDecision
 
     private bool DetectPlayer()
     {
-        Collider2D playerCollider = Physics2D.OverlapCircle(enemyBrain.transform.position,
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position,
             detectRange, playerLayerMask);
+
         if (playerCollider != null)
         {
+            
             enemyBrain.Player = playerCollider.transform;
             return true;
         }
