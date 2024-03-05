@@ -6,6 +6,13 @@ public class PlayerMana : MonoBehaviour
 {
     [SerializeField] private PlayerStatsSO playerStats;
 
+    public float CurrentMana
+    {
+        get
+        {
+            return playerStats.Mana;
+        }
+    }
 
     private void Update()
     {
@@ -16,9 +23,10 @@ public class PlayerMana : MonoBehaviour
     }
     public void UseMana(float _amount)
     {
-        if(playerStats.Mana >= _amount)
+        if (playerStats.Mana >= _amount)
         {
-            playerStats.Mana = Mathf.Max(playerStats.Mana-=_amount, 0f);
+            playerStats.Mana = Mathf.Max(playerStats.Mana -= _amount, 0f);
         }
+    
     }
 }

@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
+public class PlayerMovement : MonoBehaviour
 {
+    [Header("Input Ref")]
+    [SerializeField]
+    private PlayerInpuReader inputReader;
+
     [Header("Config")]
     [SerializeField] private float speed;
 
@@ -15,7 +21,8 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
     private PlayerAnimations playerAnimations;
     private Rigidbody2D playerRb;
     private Vector2 moveDirection;
-    private InputActions actions;
+    public Vector2 LastDirection{get;private set;}
+    //private InputActions actions;
     #endregion
 
     #region Unity Callbacks
@@ -25,8 +32,8 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
     }
     private void OnEnable()
     {
-        actions.Enable();
-        actions.Movement.SetCallbacks(this);
+        
+        inputReader.OnMoveAction += HandleOnMove;
     }
 
     private void FixedUpdate()
@@ -35,16 +42,25 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
     }
     private void OnDisable()
     {
-        actions.Disable();
+        inputReader.OnMoveAction -= HandleOnMove;
     } 
     #endregion
 
     #region Input Callbacks
 
-    public void OnMove(InputAction.CallbackContext context)
+   
+    private void HandleOnMove(Vector2 _value)
     {
-        if(playerRefs.Stats.Health <= 0) { return; }
-        moveDirection = context.ReadValue<Vector2>().normalized;
+       
+        if (playerRefs.Stats.Health <= 0) 
+        {
+            return; 
+        }
+        moveDirection = _value;
+        if(moveDirection != Vector2.zero)
+        {
+            LastDirection = moveDirection;
+        }
     }
 
     #endregion
@@ -63,14 +79,17 @@ public class PlayerMovement : MonoBehaviour,InputActions.IMovementActions
         //update animation parameters
         playerAnimations.SetBoolTransitionToMove(true);
         playerAnimations.SetMovingAnimation(moveDirection);
-      
+
+       
     }
     private void Initialize()
     {
         playerRefs = GetComponent<Player>();
         playerAnimations = GetComponent<PlayerAnimations>();
         playerRb = GetComponent<Rigidbody2D>();
-        actions = new InputActions();
-    } 
+        
+    }
+
+ 
     #endregion
 }

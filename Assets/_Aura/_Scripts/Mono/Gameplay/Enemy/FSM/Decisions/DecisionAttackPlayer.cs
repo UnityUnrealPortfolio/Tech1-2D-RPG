@@ -30,7 +30,7 @@ public class DecisionAttackPlayer : FSMDecision
         }
         else
         {
-            print("Problem code");
+           
             return false;
         }
             //enemyBrain.Player = null;

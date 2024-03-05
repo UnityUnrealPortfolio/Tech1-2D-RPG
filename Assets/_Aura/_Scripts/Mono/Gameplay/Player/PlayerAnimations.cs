@@ -14,7 +14,7 @@ public class PlayerAnimations : MonoBehaviour
     private readonly int isMovingHash = Animator.StringToHash("IsMoving");
     private readonly int deathHash = Animator.StringToHash("Death");
     private readonly int reviveHash = Animator.StringToHash("Revive");
-
+    private readonly int isShootingHash = Animator.StringToHash("IsShooting");
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
@@ -40,5 +40,10 @@ public class PlayerAnimations : MonoBehaviour
         SetMovingAnimation(down);
         playerAnimator.SetTrigger(reviveHash);
 
+    }
+
+    internal void SetShootAnimation(bool _value)
+    {
+        playerAnimator.SetBool(isShootingHash, _value);
     }
 }

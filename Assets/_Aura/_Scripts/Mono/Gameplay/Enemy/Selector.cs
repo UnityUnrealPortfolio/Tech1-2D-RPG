@@ -53,7 +53,12 @@ public class Selector : MonoBehaviour
     private void HandleNotEnemySelected()
     {
         selectionGraphic.SetActive(false);
-    } 
+    }
+
+    internal void DisableSelectionGraphic()
+    {
+        HandleNotEnemySelected();
+    }
     #endregion
 
 }

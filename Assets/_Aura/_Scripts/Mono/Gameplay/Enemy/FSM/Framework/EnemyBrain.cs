@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -6,11 +7,15 @@ using UnityEngine;
 /// </summary>
 public class EnemyBrain:MonoBehaviour
 {
+   
+
     [Tooltip("Enemies initial state")]
     [SerializeField] private string initState;
 
     [SerializeField] private FSMState[] states;
     public FSMState CurrentState { get; set; } = new FSMState();
+
+   
 
     //reference to the ninja player once detected
     public Transform Player { get; set; }
@@ -44,5 +49,7 @@ public class EnemyBrain:MonoBehaviour
 
         return null;
     }
+
+  
 }
 

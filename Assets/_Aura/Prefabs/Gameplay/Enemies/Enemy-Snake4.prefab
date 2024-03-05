@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4526596414879760115}
   - component: {fileID: -7220558460700336464}
   - component: {fileID: 7300114942126988419}
+  - component: {fileID: 2193323232886785810}
   m_Layer: 8
   m_Name: Enemy-Snake4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,8 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aab9da9aacef5b43971ac950f9ffc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: 
-  states: []
+  initState: Wander
+  states:
+  - Id: Wander
+    Actions:
+    - {fileID: 2193323232886785810}
+    Transitions: []
 --- !u!114 &7300114942126988419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +177,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionGraphic: {fileID: 2109754030753628621}
+--- !u!114 &2193323232886785810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178fc1969f05319439ae7ef2150e3096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: {x: 3, y: 3}
+  moveSpeed: 1
+  wanderTime: 2
 --- !u!1001 &8080466214330879224
 PrefabInstance:
   m_ObjectHideFlags: 0
