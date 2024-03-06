@@ -22,6 +22,7 @@ public class EnemyHealth : MonoBehaviour,IDamageable
     private EnemyHealthBarCB healthBarCB;
     private float currentHealth;
     private EnemyBrain brain;
+    private EnemyBrain selectedBrain;
     private int deathHash = Animator.StringToHash("dead");
 
     public event Action OnHealthZero;
@@ -45,6 +46,7 @@ public class EnemyHealth : MonoBehaviour,IDamageable
     }
     private void Awake()
     {
+        brain = GetComponent<EnemyBrain>();
         selector = GetComponent<Selector>();
         enemyAnimator = GetComponent<Animator>();
         healthBarCB = healthGraphic.GetComponent<EnemyHealthBarCB>();   
@@ -73,8 +75,16 @@ public class EnemyHealth : MonoBehaviour,IDamageable
     }
     public void HandleSelection(EnemyBrain enemyBrain)
     {
-        brain = enemyBrain;
-        healthGraphic.SetActive(true);
+        selectedBrain = enemyBrain;
+        if(selectedBrain == brain)
+        {
+
+            healthGraphic.SetActive(true);
+        }
+        else
+        {
+            healthGraphic.SetActive(false);
+        }
     }
     private void HandleDeselection()
     {

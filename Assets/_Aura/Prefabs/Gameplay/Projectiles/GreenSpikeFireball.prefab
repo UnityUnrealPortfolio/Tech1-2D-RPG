@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6286775583344512559}
   - component: {fileID: 961075697356564977}
   - component: {fileID: 1795915446680633701}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GreenSpikeFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.36}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 3324693166925640002}
   - component: {fileID: 4043289187086034211}
   - component: {fileID: 6599624763007809168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

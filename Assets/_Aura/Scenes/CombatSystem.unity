@@ -225,6 +225,71 @@ Canvas:
   m_SortingLayerID: 659651503
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &345387885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+  m_PrefabInstance: {fileID: 6425129433331471963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &345387894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302cfbdc8898e534a92396caa1529c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &345387895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9200ba07015554cb0db81836a2f7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 2
+  minDistance: 1.02
+--- !u!114 &345387896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2026b33ead0d41841b677dd44d7b7a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 3
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &345387897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345387885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a3e9d74e9d4724e86b9f521707d83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 1
+  damage: 1
 --- !u!1 &444785284
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,9 +331,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 529485856753061673, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
-      propertyPath: MaxHealth
-      value: 20
+    - target: {fileID: -6081712258923370292, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: states.Array.data[3].Actions.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 685439765202147451, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_Name
@@ -276,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7926438
+      value: -1.818
       objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13117,7 +13182,7 @@ PrefabInstance:
     - target: {fileID: 4037670838580017544, guid: 43cf41f40d600b6469b4c8344f48bd02, type: 3}
       propertyPath: initialWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: ec6456af9d344ed48b4598f84f89ed24, type: 2}
+      objectReference: {fileID: 11400000, guid: 1d49681371e77a643b908af2506f2c98, type: 2}
     - target: {fileID: 4037670838580017544, guid: 43cf41f40d600b6469b4c8344f48bd02, type: 3}
       propertyPath: minDistanceMeleeAttack
       value: 3
@@ -13299,6 +13364,102 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Id
+      value: Chase
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Id
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Actions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Actions.Array.data[0]
+      value: 
+      objectReference: {fileID: 345387895}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Actions.Array.data[0]
+      value: 
+      objectReference: {fileID: 345387897}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[0].Transitions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[0].Transitions.Array.data[0].Decision
+      value: 
+      objectReference: {fileID: 345387896}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[0].Decision
+      value: 
+      objectReference: {fileID: 345387894}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[1].Decision
+      value: 
+      objectReference: {fileID: 345387896}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[0].Decision
+      value: 
+      objectReference: {fileID: 345387894}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[1].Decision
+      value: 
+      objectReference: {fileID: 345387896}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[0].Transitions.Array.data[0].TrueState
+      value: Chase
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[0].TrueState
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[1].TrueState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[0].TrueState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[0].Transitions.Array.data[0].FalseState
+      value: Wander
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[0].FalseState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[1].Transitions.Array.data[1].FalseState
+      value: Wander
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[0].FalseState
+      value: Chase
+      objectReference: {fileID: 0}
+    - target: {fileID: -7220558460700336464, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      propertyPath: states.Array.data[2].Transitions.Array.data[1].FalseState
+      value: Wander
+      objectReference: {fileID: 0}
     - target: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
       propertyPath: m_Name
       value: Enemy-Snake4
@@ -13346,7 +13507,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345387897}
+    - targetCorrespondingSourceObject: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345387896}
+    - targetCorrespondingSourceObject: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345387895}
+    - targetCorrespondingSourceObject: {fileID: 4567125072722960595, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345387894}
   m_SourcePrefab: {fileID: 100100000, guid: 2392fc494a3fa3348ab172a52cb268a5, type: 3}
 --- !u!1001 &6662699573667604093
 PrefabInstance:

@@ -46,12 +46,13 @@ public class SelectionManager : MonoBehaviour
                     //invoke OnEnemySelected event and pass the enemy component
                     OnEnemySelected?.Invoke(enemyBrain);
                 }
+                //if no enemy hit invoke OnNotEnemySelected
+                else
+                {
+                    OnNotEnemySelected?.Invoke();
+                }
             }
-            //if no enemy hit invoke OnNotEnemySelected
-            else
-            {
-                OnNotEnemySelected?.Invoke();
-            }
+            
         }
 
 

@@ -39,8 +39,8 @@ public class Selector : MonoBehaviour
     #region Selection Callbacks
     private void HandleEnemySelected(EnemyBrain brain)
     {
-        
-        if (thisEnemyBrain == brain)
+       
+        if (brain == thisEnemyBrain)
         {
             
             selectionGraphic.SetActive(true);

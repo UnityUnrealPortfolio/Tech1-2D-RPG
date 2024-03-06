@@ -132,7 +132,7 @@ public class PlayerAttack : MonoBehaviour
         //show slash fx
         SetShowSlashFX();
         //check distance to enemy
-        var currentDistToEnemy = Vector3.Distance(transform.position, selectedEnemy.transform.position);
+        var currentDistToEnemy = Vector3.Distance(selectedEnemy.transform.position,transform.position);
         if (currentDistToEnemy < minDistanceMeleeAttack)
         {
             selectedEnemy.GetComponent<IDamageable>().TakeDamage(GetAttackDamage());
