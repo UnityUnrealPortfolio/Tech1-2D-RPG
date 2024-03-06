@@ -32,10 +32,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))//ToDo:Here for testing only
-        {
-            TakeDamage(2f);
-        }
+        //if (Input.GetKeyDown(KeyCode.P))//ToDo:Here for testing only
+        //{
+        //    TakeDamage(2f);
+        //}
     }
     public void TakeDamage(float _amount)
     {
@@ -56,5 +56,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void HandlePlayerDeath()
     {
         playerAnimations.SetDeathAnimation();
+        GetComponent<PlayerMovement>().enabled = false;
     }
 }

@@ -54,8 +54,10 @@ public class PlayerStatsSO : ScriptableObject
 
     public event Action OnHealthZero;
     public event Action OnDamageTaken;
+    public event Action OnPlayerReset;
     public void ResetPlayer()
     {
+        OnPlayerReset?.Invoke();
         Health = MaxHealth;
         Mana = MaxMana;
         CurrentExp = 0;

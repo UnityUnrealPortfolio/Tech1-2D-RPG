@@ -339,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-Bamboo
       objectReference: {fileID: 0}
+    - target: {fileID: 5110722916717932954, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5832276543380521519, guid: 1d58da7df090705429ed9dd85931d36b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.818

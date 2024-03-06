@@ -31,10 +31,10 @@ public class PlayerMovement : MonoBehaviour
         Initialize();
     }
     private void OnEnable()
-    {
-        
+    {    
         inputReader.OnMoveAction += HandleOnMove;
     }
+
 
     private void FixedUpdate()
     {
@@ -47,8 +47,6 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Input Callbacks
-
-   
     private void HandleOnMove(Vector2 _value)
     {
        
@@ -62,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
             LastDirection = moveDirection;
         }
     }
+
+    #endregion
+
+    #region Event Callbacks
 
     #endregion
 
