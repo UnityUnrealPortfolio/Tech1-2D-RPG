@@ -11,7 +11,7 @@ public class Selector : MonoBehaviour
 
     #region Private fields
     private Animator selectionAnimator;
-    private EnemyBrain thisEnemyBrain; 
+    private EnemyBrain thisEnemyBrain;
     #endregion
 
     #region Mono Callbacks
@@ -39,8 +39,10 @@ public class Selector : MonoBehaviour
     #region Selection Callbacks
     private void HandleEnemySelected(EnemyBrain brain)
     {
+        
         if (thisEnemyBrain == brain)
         {
+            
             selectionGraphic.SetActive(true);
         }
         else

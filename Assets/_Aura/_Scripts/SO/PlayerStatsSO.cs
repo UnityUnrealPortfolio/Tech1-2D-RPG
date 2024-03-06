@@ -36,6 +36,13 @@ public class PlayerStatsSO : ScriptableObject
     public float MaxMana;
     public float Mana;
 
+
+    [Header("Attack")]
+    public float BaseDamage;
+    [Tooltip("Likelihood of inflicting Critical damage")]public float CriticalChance;
+    [Tooltip("Percentage to add on top of base damage")]public float CriticalDamage;
+
+
     [Space(10)]
     [Header("Exp")]
     public float CurrentExp;

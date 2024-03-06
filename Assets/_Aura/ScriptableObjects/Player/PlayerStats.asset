@@ -17,6 +17,9 @@ MonoBehaviour:
   Health: 10
   MaxMana: 20
   Mana: 20
+  BaseDamage: 3
+  CriticalChance: 10
+  CriticalDamage: 50
   CurrentExp: 0
   NextLevelExp: 100
   InitialNextLevelExp: 100
