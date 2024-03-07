@@ -16,6 +16,11 @@ GameObject:
   - component: {fileID: 7300114942126988419}
   - component: {fileID: 2193323232886785810}
   - component: {fileID: 5095458500917154029}
+  - component: {fileID: 5268025929721304328}
+  - component: {fileID: 5103574519605205842}
+  - component: {fileID: 4795329675685514786}
+  - component: {fileID: 3916203356014984358}
+  - component: {fileID: 3363582782521568657}
   m_Layer: 8
   m_Name: Enemy-Snake4
   m_TagString: Enemy
@@ -165,7 +170,27 @@ MonoBehaviour:
   - Id: Wander
     Actions:
     - {fileID: 2193323232886785810}
-    Transitions: []
+    Transitions:
+    - Decision: {fileID: 5103574519605205842}
+      TrueState: Chase
+      FalseState: Wander
+  - Id: Chase
+    Actions:
+    - {fileID: 4795329675685514786}
+    Transitions:
+    - Decision: {fileID: 3916203356014984358}
+      TrueState: Attack
+      FalseState: 
+    - Decision: {fileID: 5103574519605205842}
+      TrueState: 
+      FalseState: Wander
+  - Id: Attack
+    Actions:
+    - {fileID: 5268025929721304328}
+    Transitions:
+    - Decision: {fileID: 3916203356014984358}
+      TrueState: 
+      FalseState: Chase
 --- !u!114 &7300114942126988419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +233,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   healthGraphic: {fileID: 5121804276556846464}
+--- !u!114 &5268025929721304328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a3e9d74e9d4724e86b9f521707d83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 1
+  damage: 1
+--- !u!114 &5103574519605205842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2026b33ead0d41841b677dd44d7b7a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectRange: 3
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &4795329675685514786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9200ba07015554cb0db81836a2f7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 2
+  minDistance: 1.02
+--- !u!114 &3916203356014984358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302cfbdc8898e534a92396caa1529c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &3363582782521568657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567125072722960595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ea71e2bfff4534fbb0c8c51397671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expDrop: 70
 --- !u!1001 &2709264888851485777
 PrefabInstance:
   m_ObjectHideFlags: 0

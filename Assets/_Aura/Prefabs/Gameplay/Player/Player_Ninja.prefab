@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 6125921388513639717}
   - component: {fileID: 4037670838580017544}
   - component: {fileID: 1674909459674876301}
+  - component: {fileID: 4236422238044440452}
   m_Layer: 7
   m_Name: Player_Ninja
   m_TagString: Untagged
@@ -341,10 +342,11 @@ MonoBehaviour:
   inputReader: {fileID: 1674909459674876301}
   playerMovementRef: {fileID: 3021981903225601373}
   playerMana: {fileID: 2160422678768202598}
+  playerStats: {fileID: 11400000, guid: 5303c27f76c4f0f4a8d5c2cac9421a5e, type: 2}
   playerAnimations: {fileID: 1101586889540451288}
-  initialWeapon: {fileID: 11400000, guid: e7f68cdbf4911e8449945c5ca74a789d, type: 2}
+  initialWeapon: {fileID: 11400000, guid: 1d49681371e77a643b908af2506f2c98, type: 2}
   slashFX: {fileID: 2239823897683098086}
-  minDistanceMeleeAttack: 1
+  minDistanceMeleeAttack: 3
   shootTime: 0.5
   upSpawnPos: {fileID: 7883265737280422074}
   downSpawnPos: {fileID: 2694324793293203111}
@@ -360,6 +362,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb5ac73d34838d54ea00a0f77e4cd2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4236422238044440452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534993603990785459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cff20d47a95bde46a978ab4c628f74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7170015185005551788

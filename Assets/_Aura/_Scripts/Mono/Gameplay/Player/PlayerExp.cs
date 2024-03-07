@@ -35,6 +35,7 @@ public class PlayerExp : MonoBehaviour
     {
         //Player now graduates to the next level
         playerStats.Level++;
+        playerStats.attributePoints++;
 
         //calculate what it will take to get to new next level
         float newNextLevel = Mathf.Round(playerStats.NextLevelExp + 

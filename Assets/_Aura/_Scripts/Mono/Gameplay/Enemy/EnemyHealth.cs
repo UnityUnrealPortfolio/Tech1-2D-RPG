@@ -16,13 +16,17 @@ public class EnemyHealth : MonoBehaviour,IDamageable
     [SerializeField]
     private GameObject healthGraphic;
 
-
+    #region Component Refs
     private Animator enemyAnimator;
     private Selector selector;
     private EnemyHealthBarCB healthBarCB;
-    private float currentHealth;
     private EnemyBrain brain;
     private EnemyBrain selectedBrain;
+    private EnemyLoot enemyLoot;
+    #endregion
+
+
+    private float currentHealth;
     private int deathHash = Animator.StringToHash("dead");
 
     public event Action OnHealthZero;
@@ -46,6 +50,7 @@ public class EnemyHealth : MonoBehaviour,IDamageable
     }
     private void Awake()
     {
+        enemyLoot = GetComponent<EnemyLoot>();
         brain = GetComponent<EnemyBrain>();
         selector = GetComponent<Selector>();
         enemyAnimator = GetComponent<Animator>();
@@ -101,5 +106,7 @@ public class EnemyHealth : MonoBehaviour,IDamageable
         gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         //but allow loot interactions
         brain.enabled = false;
+        //add playr exp
+        GameManager.Instance.AddPlayerExp(enemyLoot.ExpDrop);
     }
 }

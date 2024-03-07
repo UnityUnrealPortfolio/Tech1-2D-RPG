@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,17 +35,42 @@ public class UIManager : MonoBehaviour
     public TMP_Text statExpText;
     public TMP_Text reqExpText;
 
+    [Header("UI Elements - Attributes")]
+    public TMP_Text attributePointsText;
+    public TMP_Text attributeStrengthText;
+    public TMP_Text attributeDexterityText;
+    public TMP_Text atrributeIntelligenceText;
+
     #region Mono Callbacks
     private void Awake()
     {
         statsMenu.SetActive(false);
     }
+    private void OnEnable()
+    {
+        PlayerUpgrade.OnPlayerUpgradeEvent += HandlePlayerUpgraded;
+    }
+
+
+
     private void Update()
     {
         UpdateUI();//ToDo:consider refactor to an event based architecture rather than update based
-    } 
+    }
+
+    private void OnDisable()
+    {
+        PlayerUpgrade.OnPlayerUpgradeEvent += HandlePlayerUpgraded;
+    }
     #endregion
 
+    #region Event Callbacks
+    private void HandlePlayerUpgraded()
+    {
+        UpdateStatMenuTexts();
+    }
+
+    #endregion
     #region Button Callbacks
     public void ToggleStatsMenu()
     {
@@ -86,6 +112,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateStatMenuTexts()
     {
+        //upgrade stat UI
         statLevelText.text = stats.Level.ToString();
         statDamageText.text = stats.TotalDamage.ToString();
         statCChanceText.text = stats.CriticalChance.ToString();
@@ -93,6 +120,12 @@ public class UIManager : MonoBehaviour
         statTotalExpText.text = stats.TotalExp.ToString();
         statExpText.text = stats.CurrentExp.ToString();
         reqExpText.text=stats.NextLevelExp.ToString();
+
+        //upgrade attributes UI
+        attributePointsText.text = stats.attributePoints.ToString();
+        attributeStrengthText.text = stats.strength.ToString();
+        attributeDexterityText.text = stats.dexterity.ToString();
+        atrributeIntelligenceText.text = stats.intelligence.ToString();
     }
     #endregion
 }
