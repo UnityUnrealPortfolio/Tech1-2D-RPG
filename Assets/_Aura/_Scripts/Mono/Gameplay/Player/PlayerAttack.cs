@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        CurrentWeapon = initialWeapon;
+        EquipWeapon(initialWeapon);
     }
     private void OnDisable()
     {
@@ -107,6 +107,11 @@ public class PlayerAttack : MonoBehaviour
 
     #endregion
 
+    public void EquipWeapon(WeaponSO _weapon)
+    {
+        CurrentWeapon = _weapon;
+        playerStats.TotalDamage = playerStats.BaseDamage + CurrentWeapon.damage;
+    }
     public float GetAttackDamage()
     {
         float damage = playerStats.BaseDamage;

@@ -18,28 +18,55 @@ public class UIManager : MonoBehaviour
     public Image manaBar;
     public Image expBar;
 
-    [Header("UI Elements - TMP_Text")]
+    [Header("UI Elements - HUD")]
     public TMP_Text levelText;
     public TMP_Text healthText;
     public TMP_Text manaText;
     public TMP_Text expText;
 
+    [Header("UI Elements - Stats")]
+    public GameObject statsMenu;
+    public TMP_Text statLevelText;
+    public TMP_Text statDamageText;
+    public TMP_Text statCChanceText;
+    public TMP_Text statCDamageText;
+    public TMP_Text statTotalExpText;
+    public TMP_Text statExpText;
+    public TMP_Text reqExpText;
+
+    #region Mono Callbacks
+    private void Awake()
+    {
+        statsMenu.SetActive(false);
+    }
     private void Update()
     {
         UpdateUI();//ToDo:consider refactor to an event based architecture rather than update based
+    } 
+    #endregion
+
+    #region Button Callbacks
+    public void ToggleStatsMenu()
+    {
+        Debug.Log("Toggle stats menu");
+        statsMenu.SetActive(!statsMenu.activeSelf);
+        if(statsMenu.activeSelf )
+        {
+            UpdateStatMenuTexts();  
+        }
     }
+    #endregion
+
+    #region Update Utility
     public void UpdateUI()
     {
         //Update image bars
         UpdateStatBars();
 
         //update texts
-        UpdateStatTexts();
+        UpdateHUDTexts();
     }
-
-    #region Update Utility
-
-    private void UpdateStatTexts()
+    private void UpdateHUDTexts()
     {
         levelText.text = $"Level {stats.Level}";
         healthText.text = $"{stats.Health}/{stats.MaxHealth}";
@@ -56,5 +83,16 @@ public class UIManager : MonoBehaviour
         expBar.fillAmount = Mathf.Lerp(expBar.fillAmount, stats.CurrentExp / stats.NextLevelExp,
             valueUpdateRate * Time.deltaTime);
     } 
+
+    private void UpdateStatMenuTexts()
+    {
+        statLevelText.text = stats.Level.ToString();
+        statDamageText.text = stats.TotalDamage.ToString();
+        statCChanceText.text = stats.CriticalChance.ToString();
+        statCDamageText.text = stats.CriticalDamage.ToString();
+        statTotalExpText.text = stats.TotalExp.ToString();
+        statExpText.text = stats.CurrentExp.ToString();
+        reqExpText.text=stats.NextLevelExp.ToString();
+    }
     #endregion
 }

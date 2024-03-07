@@ -32,6 +32,7 @@ public class PlayerAnimations : MonoBehaviour
 
     public void SetDeathAnimation()
     {
+
         playerAnimator.SetTrigger(deathHash);
     }
 

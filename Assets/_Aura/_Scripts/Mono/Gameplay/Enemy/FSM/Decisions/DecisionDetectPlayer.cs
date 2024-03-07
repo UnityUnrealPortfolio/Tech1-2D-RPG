@@ -27,7 +27,15 @@ public class DecisionDetectPlayer : FSMDecision
         {
             
             enemyBrain.Player = playerCollider.transform;
-            return true;
+
+            if (playerCollider.GetComponent<PlayerHealth>().GetHealth() <= 0)
+            {
+                return  false;
+            }
+            else
+            {
+               return true;
+            }
         }
         else
         {

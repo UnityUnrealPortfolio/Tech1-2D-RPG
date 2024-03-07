@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         HandlePlayerDeath();
     }
 
+    public float GetHealth() => playerStats.Health;
+
     private void Update()
     {
         //if (Input.GetKeyDown(KeyCode.P))//ToDo:Here for testing only
@@ -56,6 +58,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void HandlePlayerDeath()
     {
         playerAnimations.SetDeathAnimation();
-        GetComponent<PlayerMovement>().enabled = false;
+      
     }
 }

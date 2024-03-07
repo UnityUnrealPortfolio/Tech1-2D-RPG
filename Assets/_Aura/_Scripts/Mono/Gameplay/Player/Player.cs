@@ -16,18 +16,18 @@ public class Player : MonoBehaviour
     }
     private void OnEnable()
     {
-        playerStats.OnPlayerReset += HandleReset;
+        //playerStats.OnPlayerReset += HandleReset;
     }
     private void OnDisable()
     {
-        playerStats.OnPlayerReset -= HandleReset;
+        //playerStats.OnPlayerReset -= HandleReset;
     } 
     #endregion
     public void ResetPlayer()
     {
         Stats.ResetPlayer();
         playerAnimations.ResetPlayer(Vector2.down);
-    }
+   }
     private void HandleReset()
     {
         GetComponent<PlayerMovement>().enabled = true;

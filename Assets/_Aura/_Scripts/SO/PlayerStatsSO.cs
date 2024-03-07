@@ -52,12 +52,16 @@ public class PlayerStatsSO : ScriptableObject
     [Tooltip("Percentage over and above current exp needed to go to NextLevelExp")]
     [Range(1f, 100f)] public float ExpMultiplier;
 
+    //stat totals
+    public float TotalExp { get; set; } 
+    public float TotalDamage { get; set; }  
+
     public event Action OnHealthZero;
     public event Action OnDamageTaken;
     public event Action OnPlayerReset;
     public void ResetPlayer()
     {
-        OnPlayerReset?.Invoke();
+        //OnPlayerReset?.Invoke();
         Health = MaxHealth;
         Mana = MaxMana;
         CurrentExp = 0;

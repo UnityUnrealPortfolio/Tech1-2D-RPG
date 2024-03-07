@@ -12,11 +12,12 @@ public class PlayerExp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            AddExp(300f);//ToDo:Here for testing
+            AddExp(300f);//ToDo:Here for testing EXP
         }
     }
     public void AddExp(float _amount)
     {
+        playerStats.TotalExp += _amount;
         playerStats.CurrentExp += _amount;
 
         //exp will add up until eventually it's enough to match what's needed to go to next Level

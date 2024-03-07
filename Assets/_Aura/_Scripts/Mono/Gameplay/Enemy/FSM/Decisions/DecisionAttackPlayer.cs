@@ -23,17 +23,31 @@ public class DecisionAttackPlayer : FSMDecision
         Collider2D playerCollider = Physics2D.OverlapCircle(transform.position,
             attackRange, playerLayerMask);
 
+        bool returnValue = false;
+
         if (playerCollider != null)
         {
             enemyBrain.Player = playerCollider.transform;
-            return true;
+
+            if (playerCollider.GetComponent<PlayerHealth>().GetHealth() <= 0)
+            {
+                
+                returnValue = false;
+            }
+            else
+            {
+               
+                returnValue = true;
+            }
+          
         }
-        else
+        else 
         {
            
-            return false;
+            returnValue = false;
         }
-            //enemyBrain.Player = null;
+
+        return returnValue;  
     }
 
     private void OnDrawGizmos()
